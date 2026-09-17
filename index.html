@@ -1,0 +1,374 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Evan Packard — aspiring software engineer focused on backend development."
+    />
+    <title>Evan Packard — Backend Software Engineer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page">
+      <header class="site-header">
+        <nav aria-label="Primary">
+          <ul class="nav-list">
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#coursework">Coursework</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </header>
+
+      <main id="top">
+        <section class="hero">
+          <div>
+            <p class="eyebrow">Computer Science Student at CSUF</p>
+            <h1>Evan<br />Packard</h1>
+            <p class="hero-role">Backend Software Engineer</p>
+            <p class="meta">
+              Mission Viejo, CA · US Citizen · Graduating May 2028
+            </p>
+          </div>
+          <img
+            class="portrait"
+            src="assets/evan.png"
+            alt="Evan Packard"
+            width="280"
+            height="350"
+          />
+        </section>
+
+        <section id="about" class="section">
+          <div class="panel">
+            <h2>About</h2>
+            <p>
+              I focus on backend development: designing REST APIs, working with
+              SQL, and shipping services with Spring Boot. I also write Python
+              and TypeScript, and I can pick up React or Next.js when a project
+              needs a UI.
+            </p>
+            <p>
+              Outside of code, I drive a 2021 A90 Supra, snowboard at Tahoe/Big
+              Bear, and produce music in FL Studio.
+            </p>
+            <a class="btn btn-solid" href="#contact">Get in touch</a>
+          </div>
+          <div class="life-grid">
+            <figure>
+              <img
+                class="life-photo-car"
+                src="assets/supra.png"
+                alt="White 2021 Toyota GR Supra A90 at night"
+                width="640"
+                height="480"
+              />
+              <figcaption>2021 A90 Supra</figcaption>
+            </figure>
+            <figure>
+              <img
+                class="life-photo-snow"
+                src="assets/snowboard.png"
+                alt="Evan walking with a snowboard"
+                width="480"
+                height="640"
+              />
+              <figcaption>Snowboarding</figcaption>
+            </figure>
+          </div>
+        </section>
+
+        <section id="skills" class="section">
+          <h2>Skills</h2>
+          <div class="skill-groups">
+            <div>
+              <h3>Languages</h3>
+              <ul class="chips">
+                <li>Java</li>
+                <li>Python</li>
+                <li>TypeScript</li>
+                <li>C++</li>
+              </ul>
+            </div>
+            <div>
+              <h3>Backend</h3>
+              <ul class="chips">
+                <li>Spring Boot</li>
+                <li>REST APIs</li>
+                <li>SQL</li>
+              </ul>
+            </div>
+            <div>
+              <h3>Frontend</h3>
+              <ul class="chips">
+                <li>React</li>
+                <li>Next.js</li>
+              </ul>
+            </div>
+            <div>
+              <h3>Practices</h3>
+              <ul class="chips">
+                <li>Agile</li>
+                <li>Scrum</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section id="projects" class="section">
+          <h2>Projects</h2>
+          <div class="project-grid">
+            <article class="project-card">
+              <h3>F1 Live 3D Telemetry Visualizer</h3>
+              <p>
+                A live F1 race tracker. Spring Boot APIs and a WebSocket server
+                stream car positions while the race is going, and Redis plus a
+                few small services keep the live feed, ingestion, and the rest
+                of the app from stepping on each other. Race data is stored in
+                SQL through Hibernate.
+              </p>
+              <ul class="chips">
+                <li>Java</li>
+                <li>Spring Boot</li>
+                <li>WebSocket</li>
+                <li>Redis</li>
+                <li>Hibernate</li>
+              </ul>
+            </article>
+
+            <article class="project-card">
+              <h3>AI Assisted Pokemon Team Builder</h3>
+              <p>
+                A full-stack team builder with Spring Boot and React. It pulls
+                Pokemon data from a public API, then saves your teams in a
+                database so they are still there the next time you open the app.
+                Spring Cache covers repeat lookups so it is not hitting that
+                external API every time.
+              </p>
+              <ul class="chips">
+                <li>Java</li>
+                <li>Spring Boot</li>
+                <li>React</li>
+                <li>JPA</li>
+                <li>Spring Cache</li>
+              </ul>
+            </article>
+
+            <article class="project-card">
+              <h3>Job Application Tracker</h3>
+              <p>
+                A place to keep job applications in one spot. Python on the
+                backend, TypeScript on the frontend. You sign in with OAuth2,
+                and GPT-4o Vision can read a screenshot of a posting so you do
+                not have to type every field by hand.
+              </p>
+              <ul class="chips">
+                <li>Python</li>
+                <li>TypeScript</li>
+                <li>OAuth2</li>
+                <li>GPT-4o Vision</li>
+              </ul>
+            </article>
+          </div>
+        </section>
+
+        <section id="coursework" class="section is-open">
+          <div class="coursework-header">
+            <div>
+              <h2>
+                <button
+                  class="coursework-toggle"
+                  type="button"
+                  aria-expanded="true"
+                  aria-controls="coursework-content"
+                >
+                  Coursework
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path
+                      d="m9.5 7 5 5-5 5"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </button>
+              </h2>
+              <p class="section-note">California State University, Fullerton</p>
+            </div>
+            <img
+              class="school-logo"
+              src="assets/csuf-logo.png"
+              alt="Cal State Fullerton"
+              width="88"
+              height="88"
+            />
+          </div>
+          <div
+            id="coursework-content"
+            class="coursework-content"
+            aria-hidden="false"
+          >
+            <div class="coursework-content-inner">
+              <ul class="course-list">
+                <li>
+                  <strong>Algorithm Engineering</strong>
+                  <span>CPSC 335</span>
+                </li>
+                <li>
+                  <strong>Calculus II</strong>
+                  <span>MATH 150B</span>
+                </li>
+                <li>
+                  <strong>Comp Org &amp; Assembly Language</strong>
+                  <span>CPSC 240</span>
+                </li>
+                <li>
+                  <strong>Comp Syst Architecture</strong>
+                  <span>CPSC 440</span>
+                </li>
+                <li>
+                  <strong>Compilers and Languages</strong>
+                  <span>CPSC 323</span>
+                </li>
+                <li>
+                  <strong>Computer Communications</strong>
+                  <span>CPSC 471</span>
+                </li>
+                <li>
+                  <strong>Cybersecurity Foundations and Principles</strong>
+                  <span>CPSC 253</span>
+                </li>
+                <li>
+                  <strong>Data Structures and Algorithms</strong>
+                  <span>CPSC 131</span>
+                </li>
+                <li>
+                  <strong>Foundations of Software Engineering</strong>
+                  <span>CPSC 362</span>
+                </li>
+                <li>
+                  <strong>Intro to Data Sci. &amp; Big Data</strong>
+                  <span>CPSC 375</span>
+                </li>
+                <li>
+                  <strong>Mathematical Structures II</strong>
+                  <span>MATH 170B</span>
+                </li>
+                <li>
+                  <strong>Mobile Dev Programming</strong>
+                  <span>CPSC 411</span>
+                </li>
+                <li>
+                  <strong>Operating System Concepts</strong>
+                  <span>CPSC 351</span>
+                </li>
+                <li>
+                  <strong>Python Programming</strong>
+                  <span>CPSC 223P</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section id="contact" class="section">
+          <h2>Contact</h2>
+          <ul class="contact-list">
+            <li>
+              GitHub
+              <a href="https://github.com/evan19kp">github.com/evan19kp</a>
+            </li>
+            <li>
+              LinkedIn
+              <a href="https://www.linkedin.com/in/evankp19/"
+                >linkedin.com/in/evankp19</a
+              >
+            </li>
+            <li>
+              Email
+              <a href="mailto:evankpackard@gmail.com">evankpackard@gmail.com</a>
+            </li>
+          </ul>
+          <div class="aws-card">
+            <div>
+              <h3>AWS Builder Center</h3>
+              <p>
+                Alias
+                <a href="https://builder.aws.com/community/@evan19">@evan19</a>
+              </p>
+            </div>
+            <a
+              class="qr-link"
+              href="https://builder.aws.com/community/@evan19"
+              aria-label="AWS Builder Center profile QR code for @evan19"
+            >
+              <img
+                src="assets/aws-builder-qr.png"
+                alt="QR code linking to AWS Builder Center profile @evan19"
+                width="160"
+                height="160"
+              />
+            </a>
+          </div>
+        </section>
+      </main>
+
+    </div>
+    <a class="to-top" href="#top" aria-label="Back to top">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path
+          d="M6 14.5 12 8.5l6 6"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2.2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      </svg>
+    </a>
+    <script>
+      (function () {
+        var button = document.querySelector(".to-top");
+        var about = document.querySelector("#about");
+        if (!button || !about) return;
+
+        function update() {
+          button.classList.toggle(
+            "is-visible",
+            about.getBoundingClientRect().top <= 96,
+          );
+        }
+
+        window.addEventListener("scroll", update, { passive: true });
+        window.addEventListener("resize", update);
+        update();
+
+        var courseworkToggle = document.querySelector(".coursework-toggle");
+        var courseworkContent = document.querySelector("#coursework-content");
+        var courseworkSection = document.querySelector("#coursework");
+
+        if (courseworkToggle && courseworkContent && courseworkSection) {
+          courseworkToggle.addEventListener("click", function () {
+            var isOpen =
+              courseworkToggle.getAttribute("aria-expanded") === "true";
+            courseworkToggle.setAttribute("aria-expanded", String(!isOpen));
+            courseworkContent.setAttribute("aria-hidden", String(isOpen));
+            courseworkSection.classList.toggle("is-open", !isOpen);
+          });
+        }
+      })();
+    </script>
+  </body>
+</html>
