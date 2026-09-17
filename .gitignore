@@ -1,0 +1,23 @@
+# Editor settings
+.vscode/
+.idea/
+.cursor/
+*.code-workspace
+
+# Operating system files
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Logs and temporary files
+*.log
+*.tmp
+*.temp
+*.swp
+*~
+
+# Local development
+.env
+.env.*
+!.env.example
+.cache/
