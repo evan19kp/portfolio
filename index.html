@@ -59,12 +59,12 @@
               needs a UI.
             </p>
             <p>
-              Outside of code, I drive a 2021 A90 Supra, snowboard at Tahoe/Big
-              Bear, and produce music in FL Studio.
+              Outside of code, I am a car enthusiast, I snowboard at Tahoe/Big
+              Bear, and I produce music in FL Studio.
             </p>
             <a class="btn btn-solid" href="#contact">Get in touch</a>
           </div>
-          <div class="life-grid">
+          <div class="life-grid" hidden>
             <figure>
               <img
                 class="life-photo-car"
@@ -131,11 +131,12 @@
             <article class="project-card">
               <h3>F1 Live 3D Telemetry Visualizer</h3>
               <p>
-                A live F1 race tracker. Spring Boot APIs and a WebSocket server
-                stream car positions while the race is going, and Redis plus a
-                few small services keep the live feed, ingestion, and the rest
-                of the app from stepping on each other. Race data is stored in
-                SQL through Hibernate.
+                Built a real-time race tracker that streams live car positions
+                over WebSockets from Spring Boot APIs. Designed the system
+                around Redis to decouple ingestion, live feed distribution, and
+                the rest of the app, so a slowdown in one doesn't block the
+                others. Race history persists to SQL via Hibernate for post-race
+                replay/analysis.
               </p>
               <ul class="chips">
                 <li>Java</li>
@@ -149,11 +150,11 @@
             <article class="project-card">
               <h3>AI Assisted Pokemon Team Builder</h3>
               <p>
-                A full-stack team builder with Spring Boot and React. It pulls
-                Pokemon data from a public API, then saves your teams in a
-                database so they are still there the next time you open the app.
-                Spring Cache covers repeat lookups so it is not hitting that
-                external API every time.
+                Full-stack app for building and saving Pokémon teams, backed by
+                Spring Boot and React. Pulls live data from a public Pokémon API
+                and caches repeat lookups with Spring Cache, cutting redundant
+                external calls and keeping the UI responsive. Teams persist per
+                user via JPA, so builds are saved across sessions.
               </p>
               <ul class="chips">
                 <li>Java</li>
@@ -167,10 +168,11 @@
             <article class="project-card">
               <h3>Job Application Tracker</h3>
               <p>
-                A place to keep job applications in one spot. Python on the
-                backend, TypeScript on the frontend. You sign in with OAuth2,
-                and GPT-4o Vision can read a screenshot of a posting so you do
-                not have to type every field by hand.
+                A tracker for managing job applications end-to-end, with a
+                Python backend and TypeScript frontend. Users authenticate via
+                OAuth2, and a GPT-4o Vision pipeline parses screenshots of job
+                postings — extracting fields like title, company, and
+                requirements — so users don't have to enter them manually.
               </p>
               <ul class="chips">
                 <li>Python</li>
@@ -324,7 +326,6 @@
           </div>
         </section>
       </main>
-
     </div>
     <a class="to-top" href="#top" aria-label="Back to top">
       <svg viewBox="0 0 24 24" aria-hidden="true">
