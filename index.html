@@ -131,20 +131,69 @@
             <article class="project-card">
               <h3>F1 Live 3D Telemetry Visualizer</h3>
               <p>
-                Built a real-time race tracker that streams live car positions
-                over WebSockets from Spring Boot APIs. Designed the system
-                around Redis to decouple ingestion, live feed distribution, and
-                the rest of the app, so a slowdown in one doesn't block the
-                others. Race history persists to SQL via Hibernate for post-race
-                replay/analysis.
+                A 3D replay of real Formula 1 sessions in the browser, built
+                with React Three Fiber and Spring Boot from OpenF1 timing and
+                GPS data. Cars stream over WebSockets onto circuits rebuilt from
+                GPS, with braking heatmaps, track elevation, and pit strategy.
+                Every visitor controls their own replay without logging in. It
+                runs in Docker on AWS Graviton behind a Cloudflare Tunnel, with
+                CI security gates and a hardened, rate-limited public API.
               </p>
               <ul class="chips">
                 <li>Java</li>
                 <li>Spring Boot</li>
-                <li>WebSocket</li>
-                <li>Redis</li>
-                <li>Hibernate</li>
+                <li>React Three Fiber</li>
+                <li>WebSockets</li>
+                <li>Docker</li>
+                <li>AWS EC2</li>
+                <li>Cloudflare</li>
               </ul>
+              <div class="project-action-row">
+                <a
+                  class="project-link"
+                  href="https://f1visualizer.dev/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  View live app
+                  <span aria-hidden="true">↗</span>
+                </a>
+                <span class="project-thanks">
+                  (Thank you for checking out my project if you do 😁👍)
+                </span>
+              </div>
+              <div class="project-gallery">
+                <a
+                  href="https://f1visualizer.dev/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Open the live F1 Visualizer app"
+                >
+                  <img
+                    src="assets/f1-visualizer-overview.png"
+                    alt="F1 Visualizer showing the full Singapore circuit and replay controls"
+                    width="1024"
+                    height="826"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </a>
+                <a
+                  href="https://f1visualizer.dev/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Open the live F1 Visualizer app"
+                >
+                  <img
+                    src="assets/f1-visualizer-track.png"
+                    alt="Close view of Formula 1 cars moving through corners on the 3D circuit"
+                    width="996"
+                    height="603"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </a>
+              </div>
             </article>
 
             <article class="project-card">
