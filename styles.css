@@ -239,8 +239,7 @@ p:last-child {
 
 .panel h2,
 .panel p,
-.panel .btn,
-.panel .life-grid {
+.panel .btn {
   position: relative;
   z-index: 1;
 }
@@ -353,45 +352,6 @@ p:last-child {
 .skill-groups {
   display: grid;
   gap: 1.5rem;
-}
-
-.life-grid {
-  display: grid;
-  gap: 1rem;
-  margin-top: 1.5rem;
-}
-
-@media (min-width: 640px) {
-  .life-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
-.life-grid figure {
-  margin: 0;
-}
-
-.life-grid img {
-  width: 100%;
-  height: 20rem;
-  object-fit: cover;
-  border-radius: 22px;
-  background: var(--slot);
-}
-
-.life-photo-car {
-  object-position: center 78%;
-}
-
-.life-photo-snow {
-  object-position: center 42%;
-}
-
-.life-grid figcaption {
-  margin-top: 0.5rem;
-  color: var(--muted);
-  font-size: 0.92rem;
-  font-weight: 500;
 }
 
 @media (min-width: 640px) {
