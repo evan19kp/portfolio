@@ -22,8 +22,9 @@
         <nav aria-label="Primary">
           <ul class="nav-list">
             <li><a href="#about">About</a></li>
-            <li><a href="#skills">Skills</a></li>
+            <li><a href="#awards">Awards</a></li>
             <li><a href="#projects">Projects</a></li>
+            <li><a href="#skills">Skills</a></li>
             <li><a href="#coursework">Coursework</a></li>
             <li><a href="#contact">Contact</a></li>
           </ul>
@@ -35,7 +36,9 @@
           <div>
             <p class="eyebrow">Computer Science Student at CSUF</p>
             <h1>Evan<br />Packard</h1>
-            <p class="hero-role">CS Student focused on Backend Engineering</p>
+            <p class="hero-role">
+              Looking for fullstack/backend development internships
+            </p>
             <p class="meta">
               Mission Viejo, CA · US Citizen · Graduating May 2028
             </p>
@@ -53,10 +56,11 @@
           <div class="panel">
             <h2>About</h2>
             <p>
-              I focus on backend development: designing REST APIs, working with
-              SQL, and shipping services with Spring Boot. I also write Python
-              and TypeScript, and I can pick up React or Next.js when a project
-              needs a UI.
+              I focus on full-stack development, from designing REST APIs and
+              SQL schemas in Spring Boot to building React and Next.js frontends
+              that sit on top of them. I work across Java, Python, and
+              TypeScript, and I like owning a feature end to end, from the
+              database to deployment.
             </p>
             <p>
               Outside of code, I am a car enthusiast, I snowboard at Tahoe/Big
@@ -85,6 +89,182 @@
               />
               <figcaption>Snowboarding</figcaption>
             </figure>
+          </div>
+        </section>
+
+        <section id="awards" class="section">
+          <h2>Awards</h2>
+          <article
+            class="award-card"
+            data-tools="TypeScript, Node.js, Express, React, Vite, TanStack Query, Socket.IO, Zod, Python, FastAPI, Drizzle ORM, BullMQ, AWS Textract, Amazon SageMaker, ModernBERT (zero-shot), Amazon Aurora PostgreSQL, Amazon S3, Amazon ElastiCache (Valkey), Docker, GitHub Actions"
+          >
+            <div class="award-header">
+              <span class="award-badge">🏆 Best Use of AWS</span>
+              <span class="award-meta"
+                >LPL Financial University 24H Hackathon · October 2026</span
+              >
+            </div>
+            <div class="award-intro">
+              <h3>Backbone</h3>
+              <p>
+                A document intelligence platform for LPL's financial advisors,
+                built in 24 hours by a team of five. Researching LPL's advisor
+                platform, we found that client documents were disorganized and
+                hard to find, so we built a pipeline that sorts them
+                automatically and makes them searchable.
+              </p>
+            </div>
+            <div class="award-video">
+              <iframe
+                src="https://www.youtube-nocookie.com/embed/2I7ILFuSh48?rel=0"
+                title="Backbone hackathon demo"
+                loading="lazy"
+                allow="
+                  accelerometer;
+                  clipboard-write;
+                  encrypted-media;
+                  gyroscope;
+                  picture-in-picture;
+                  web-share;
+                "
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen
+              ></iframe>
+            </div>
+            <div class="award-role">
+              <p class="award-label">What I built</p>
+              <ul class="award-points">
+                <li>
+                  <strong>AI document pipeline.</strong> Cleaned and normalized
+                  AWS Textract output in Python so a zero-shot ModernBERT model
+                  could classify each document by owner, type, and topic, with a
+                  confidence score for every label. Zero-shot meant no training
+                  data, and new categories can be added without retraining.
+                </li>
+                <li>
+                  <strong>Live documents and notes pages.</strong> Connected the
+                  React pages to Aurora PostgreSQL through an Express and
+                  Drizzle API, using React Query and Socket.IO so they update
+                  live as documents change.
+                </li>
+                <li>
+                  <strong>Chatbot knowledge base.</strong> Linked those pages to
+                  the knowledge base behind the platform's AI chatbot, which
+                  answers advisors' questions using only each client's own files
+                  and notes.
+                </li>
+              </ul>
+            </div>
+            <p class="award-outcome">
+              <strong>Outcome:</strong> LPL's judges expressed interest in
+              implementing Backbone internally.
+            </p>
+            <div class="project-action-row">
+              <a
+                class="project-link"
+                href="https://github.com/TheBigJ3/LPL-Hacks"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                View repo
+                <span aria-hidden="true">↗</span>
+              </a>
+            </div>
+          </article>
+        </section>
+
+        <section id="projects" class="section">
+          <h2>Projects</h2>
+          <div class="project-grid">
+            <article
+              class="project-card"
+              data-tools="Java, Spring Boot, React Three Fiber, WebSockets, Docker, AWS EC2, Cloudflare"
+            >
+              <h3>F1 Live 3D Telemetry Visualizer</h3>
+              <p>
+                A 3D replay of real Formula 1 sessions in the browser, built
+                with React Three Fiber and Spring Boot from OpenF1 timing and
+                GPS data. Cars stream over WebSockets onto circuits rebuilt from
+                GPS, with braking heatmaps, track elevation, and pit strategy.
+                Every visitor controls their own replay without logging in. It
+                runs in Docker on AWS Graviton behind a Cloudflare Tunnel, with
+                CI security gates and a hardened, rate-limited public API.
+              </p>
+              <div class="project-gallery">
+                <a
+                  href="https://f1visualizer.dev/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Open the live F1 Visualizer app"
+                >
+                  <img
+                    src="assets/f1-visualizer-overview.png"
+                    alt="F1 Visualizer showing the full Singapore circuit and replay controls"
+                    width="1024"
+                    height="826"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </a>
+                <a
+                  href="https://f1visualizer.dev/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Open the live F1 Visualizer app"
+                >
+                  <img
+                    src="assets/f1-visualizer-track.png"
+                    alt="Close view of Formula 1 cars moving through corners on the 3D circuit"
+                    width="996"
+                    height="603"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </a>
+              </div>
+              <div class="project-action-row">
+                <a
+                  class="project-link"
+                  href="https://f1visualizer.dev/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  View live app
+                  <span aria-hidden="true">↗</span>
+                </a>
+                <span class="project-thanks">
+                  (Thank you for checking out my project if you do 😁👍)
+                </span>
+              </div>
+            </article>
+
+            <article
+              class="project-card"
+              data-tools="Java, Spring Boot, React, JPA, Spring Cache"
+            >
+              <h3>AI Assisted Pokemon Team Builder</h3>
+              <p>
+                Full-stack app for building and saving Pokémon teams, backed by
+                Spring Boot and React. Pulls live data from a public Pokémon API
+                and caches repeat lookups with Spring Cache, cutting redundant
+                external calls and keeping the UI responsive. Teams persist per
+                user via JPA, so builds are saved across sessions.
+              </p>
+            </article>
+
+            <article
+              class="project-card"
+              data-tools="Python, TypeScript, OAuth2, GPT-4o Vision"
+            >
+              <h3>Job Application Tracker</h3>
+              <p>
+                A tracker for managing job applications end-to-end, with a
+                Python backend and TypeScript frontend. Users authenticate via
+                OAuth2, and a GPT-4o Vision pipeline parses screenshots of job
+                postings — extracting fields like title, company, and
+                requirements — so users don't have to enter them manually.
+              </p>
+            </article>
           </div>
         </section>
 
@@ -122,114 +302,6 @@
                 <li>Scrum</li>
               </ul>
             </div>
-          </div>
-        </section>
-
-        <section id="projects" class="section">
-          <h2>Projects</h2>
-          <div class="project-grid">
-            <article class="project-card">
-              <h3>F1 Live 3D Telemetry Visualizer</h3>
-              <p>
-                A 3D replay of real Formula 1 sessions in the browser, built
-                with React Three Fiber and Spring Boot from OpenF1 timing and
-                GPS data. Cars stream over WebSockets onto circuits rebuilt from
-                GPS, with braking heatmaps, track elevation, and pit strategy.
-                Every visitor controls their own replay without logging in. It
-                runs in Docker on AWS Graviton behind a Cloudflare Tunnel, with
-                CI security gates and a hardened, rate-limited public API.
-              </p>
-              <ul class="chips">
-                <li>Java</li>
-                <li>Spring Boot</li>
-                <li>React Three Fiber</li>
-                <li>WebSockets</li>
-                <li>Docker</li>
-                <li>AWS EC2</li>
-                <li>Cloudflare</li>
-              </ul>
-              <div class="project-action-row">
-                <a
-                  class="project-link"
-                  href="https://f1visualizer.dev/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  View live app
-                  <span aria-hidden="true">↗</span>
-                </a>
-                <span class="project-thanks">
-                  (Thank you for checking out my project if you do 😁👍)
-                </span>
-              </div>
-              <div class="project-gallery">
-                <a
-                  href="https://f1visualizer.dev/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Open the live F1 Visualizer app"
-                >
-                  <img
-                    src="assets/f1-visualizer-overview.png"
-                    alt="F1 Visualizer showing the full Singapore circuit and replay controls"
-                    width="1024"
-                    height="826"
-                    loading="lazy"
-                    decoding="async"
-                  />
-                </a>
-                <a
-                  href="https://f1visualizer.dev/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Open the live F1 Visualizer app"
-                >
-                  <img
-                    src="assets/f1-visualizer-track.png"
-                    alt="Close view of Formula 1 cars moving through corners on the 3D circuit"
-                    width="996"
-                    height="603"
-                    loading="lazy"
-                    decoding="async"
-                  />
-                </a>
-              </div>
-            </article>
-
-            <article class="project-card">
-              <h3>AI Assisted Pokemon Team Builder</h3>
-              <p>
-                Full-stack app for building and saving Pokémon teams, backed by
-                Spring Boot and React. Pulls live data from a public Pokémon API
-                and caches repeat lookups with Spring Cache, cutting redundant
-                external calls and keeping the UI responsive. Teams persist per
-                user via JPA, so builds are saved across sessions.
-              </p>
-              <ul class="chips">
-                <li>Java</li>
-                <li>Spring Boot</li>
-                <li>React</li>
-                <li>JPA</li>
-                <li>Spring Cache</li>
-              </ul>
-            </article>
-
-            <article class="project-card">
-              <h3>Job Application Tracker</h3>
-              <p>
-                A tracker for managing job applications end-to-end, with a
-                Python backend and TypeScript frontend. Users authenticate via
-                OAuth2, and a GPT-4o Vision pipeline parses screenshots of job
-                postings — extracting fields like title, company, and
-                requirements — so users don't have to enter them manually.
-              </p>
-              <ul class="chips">
-                <li>Python</li>
-                <li>TypeScript</li>
-                <li>OAuth2</li>
-                <li>GPT-4o Vision</li>
-              </ul>
-            </article>
           </div>
         </section>
 
@@ -388,7 +460,130 @@
         />
       </svg>
     </a>
+    <dialog class="tools-dialog" aria-labelledby="tools-dialog-title">
+      <div class="tools-dialog-header">
+        <h3 id="tools-dialog-title"></h3>
+        <button class="tools-dialog-close" type="button" aria-label="Close">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path
+              d="M6 6l12 12M18 6 6 18"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.2"
+              stroke-linecap="round"
+            />
+          </svg>
+        </button>
+      </div>
+      <p class="tools-dialog-label">Tools involved</p>
+      <ul class="tools-dialog-list"></ul>
+    </dialog>
+    <div class="cursor-hint" aria-hidden="true">
+      Click to see tools involved
+    </div>
     <script>
+      (function () {
+        var dialog = document.querySelector(".tools-dialog");
+        var cards = document.querySelectorAll(".project-card, .award-card");
+
+        if (dialog && dialog.showModal) {
+          var dialogTitle = dialog.querySelector("#tools-dialog-title");
+          var dialogList = dialog.querySelector(".tools-dialog-list");
+          var lastCard = null;
+
+          function openTools(card) {
+            var tools = (card.dataset.tools || "").split(",");
+
+            dialogTitle.textContent = card.querySelector("h3").textContent;
+            dialogList.replaceChildren();
+            tools.forEach(function (tool) {
+              var li = document.createElement("li");
+              li.textContent = tool.trim();
+              dialogList.appendChild(li);
+            });
+
+            lastCard = card;
+            hideHint();
+            dialog.showModal();
+          }
+
+          // "Click to see tools" label that appears at the cursor after it
+          // rests on a card for a few seconds.
+          var hint = document.querySelector(".cursor-hint");
+          var canHover = window.matchMedia("(hover: hover)").matches;
+          var hintDelay = 800;
+          var hintTimer = null;
+
+          function hideHint() {
+            clearTimeout(hintTimer);
+            if (hint) hint.classList.remove("is-visible");
+          }
+
+          function moveHint(event) {
+            hideHint();
+            if (event.target.closest("a, button, .award-video")) return;
+
+            var x = event.clientX + 16;
+            var y = event.clientY + 18;
+            if (x + hint.offsetWidth > window.innerWidth - 8) {
+              x = event.clientX - hint.offsetWidth - 12;
+            }
+            if (y + hint.offsetHeight > window.innerHeight - 8) {
+              y = event.clientY - hint.offsetHeight - 12;
+            }
+            hint.style.transform = "translate(" + x + "px, " + y + "px)";
+
+            hintTimer = setTimeout(function () {
+              if (!dialog.open) hint.classList.add("is-visible");
+            }, hintDelay);
+          }
+
+          if (hint && canHover) {
+            window.addEventListener("scroll", hideHint, { passive: true });
+          }
+
+          cards.forEach(function (card) {
+            card.classList.add("is-clickable");
+            card.setAttribute("tabindex", "0");
+            card.setAttribute("aria-haspopup", "dialog");
+
+            if (hint && canHover) {
+              card.addEventListener("mousemove", moveHint);
+              card.addEventListener("mouseleave", hideHint);
+            }
+
+            card.addEventListener("click", function (event) {
+              if (event.target.closest("a, button, .award-video")) return;
+              if (String(window.getSelection())) return;
+              openTools(card);
+            });
+
+            card.addEventListener("keydown", function (event) {
+              if (event.target !== card) return;
+              if (event.key === "Enter" || event.key === " ") {
+                event.preventDefault();
+                openTools(card);
+              }
+            });
+          });
+
+          dialog
+            .querySelector(".tools-dialog-close")
+            .addEventListener("click", function () {
+              dialog.close();
+            });
+
+          // Clicking the backdrop (outside the dialog box) closes it.
+          dialog.addEventListener("click", function (event) {
+            if (event.target === dialog) dialog.close();
+          });
+
+          dialog.addEventListener("close", function () {
+            if (lastCard) lastCard.focus();
+          });
+        }
+      })();
+
       (function () {
         var button = document.querySelector(".to-top");
         var about = document.querySelector("#about");
