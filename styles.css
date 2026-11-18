@@ -12,6 +12,66 @@
   --radius: 28px;
   --radius-sm: 18px;
   --max: 68rem;
+  --scroll-thumb: #ffffff;
+  --scroll-thumb-hover: #f1eff7;
+  --scroll-edge: rgba(36, 30, 27, 0.1);
+  --scroll-shade: rgba(36, 30, 27, 0.07);
+  --scroll-channel: #f1eef6;
+}
+
+/* Floating scrollbars: a rounded thumb inset from the edge on a
+   transparent track, used for the page and every scrolling popup. */
+::-webkit-scrollbar {
+  width: 14px;
+  height: 14px;
+}
+
+::-webkit-scrollbar-track,
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  border: 4px solid transparent;
+  border-radius: 999px;
+  background: var(--scroll-thumb) padding-box;
+  /* A barely-there edge plus a soft shade along the bottom, so the white
+     pill looks raised rather than outlined. Inset shadows stay inside the
+     padding box, so they follow the pill's rounded shape. */
+  box-shadow:
+    inset 0 0 0 1px var(--scroll-edge),
+    inset 0 -3px 4px var(--scroll-shade);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--scroll-thumb-hover);
+}
+
+/* The popup is white, so the white pill sits in a soft lavender channel
+   there instead of relying on an outline to be seen. */
+.tools-dialog::-webkit-scrollbar-track {
+  border: 4px solid transparent;
+  border-radius: 999px;
+  background: var(--scroll-channel) padding-box;
+}
+
+::-webkit-scrollbar-button {
+  display: none;
+}
+
+/* Firefox has no ::-webkit-scrollbar; give it the closest match. Chrome
+   skips this, since scrollbar-color would override the styles above. */
+@supports not selector(::-webkit-scrollbar) {
+  * {
+    scrollbar-color: var(--scroll-thumb) transparent;
+    scrollbar-width: thin;
+  }
+
+  /* Firefox can't shade the thumb, so on the white popup the lavender
+     channel behind it is what makes the white thumb visible. */
+  .tools-dialog {
+    scrollbar-color: var(--scroll-thumb) var(--scroll-channel);
+  }
 }
 
 *,
@@ -766,6 +826,29 @@ p:last-child {
   opacity: 0.82;
 }
 
+.project-button {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.4rem 0.8rem;
+  border: 1.5px solid var(--ink);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--ink);
+  font: inherit;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.project-button:hover {
+  background: var(--slot);
+}
+
+.project-button:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 2px;
+}
+
 .project-thanks {
   color: var(--muted);
   font-size: 0.78rem;
@@ -843,45 +926,6 @@ p:last-child {
 
 [hidden] {
   display: none !important;
-}
-
-.is-clickable {
-  cursor: pointer;
-  transition:
-    transform 0.2s ease,
-    box-shadow 0.2s ease;
-}
-
-.is-clickable:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 14px 32px rgba(36, 30, 27, 0.1);
-}
-
-.is-clickable:focus-visible {
-  outline: 2px solid var(--ink);
-  outline-offset: 3px;
-}
-
-.cursor-hint {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 40;
-  padding: 0.35rem 0.7rem;
-  border-radius: 999px;
-  background: var(--ink);
-  color: var(--card);
-  font-size: 0.8rem;
-  font-weight: 600;
-  white-space: nowrap;
-  pointer-events: none;
-  opacity: 0;
-  transition: opacity 0.15s ease;
-  box-shadow: 0 8px 20px rgba(36, 30, 27, 0.18);
-}
-
-.cursor-hint.is-visible {
-  opacity: 1;
 }
 
 .tools-dialog {
@@ -978,15 +1022,168 @@ p:last-child {
   text-transform: uppercase;
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .is-clickable,
-  .tools-dialog[open] {
-    transition: none;
-    animation: none;
-  }
+.tools-dialog.is-wide {
+  width: min(68rem, calc(100% - 2rem));
+  /* Scrolling locks onto the header and then each diagram card. */
+  scroll-snap-type: y mandatory;
+  scroll-padding-top: 1.3rem; /* matches the dialog's top padding */
+}
 
-  .is-clickable:hover {
-    transform: none;
+.tools-dialog.is-wide .tools-dialog-header,
+.tools-dialog.is-wide .diagram-card {
+  scroll-snap-align: start;
+}
+
+.diagram-list {
+  display: grid;
+  gap: 1.4rem;
+}
+
+.diagram-card {
+  margin: 0;
+  padding: 1rem 1.1rem 1.1rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--card);
+  cursor: zoom-in;
+  transition:
+    border-color 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+.diagram-card:hover {
+  border-color: var(--muted);
+  box-shadow: 0 10px 24px rgba(36, 30, 27, 0.1);
+}
+
+.diagram-card:has(a:focus-visible) {
+  outline: 2px solid var(--ink);
+  outline-offset: 2px;
+}
+
+.diagram-card figcaption {
+  display: grid;
+  gap: 0.15rem;
+  margin-bottom: 0.75rem;
+}
+
+.diagram-title {
+  color: var(--ink);
+  font-size: 1rem;
+  font-weight: 650;
+}
+
+.diagram-note {
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.diagram-list a {
+  display: block;
+  padding: 0.5rem;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: #fff;
+  line-height: 0;
+  cursor: zoom-in;
+}
+
+.diagram-list img {
+  width: 100%;
+  height: auto;
+  /* Short enough that a whole card (title + diagram) fits in the popup,
+     so scroll snapping can show one complete diagram at a time. */
+  max-height: calc(100vh - 13rem);
+  object-fit: contain;
+}
+
+
+/* Lock the page behind an open popup so only the popup scrolls. */
+html:has(dialog[open]) {
+  overflow: hidden;
+  scrollbar-gutter: stable; /* keep the scrollbar's space so nothing shifts */
+}
+
+.tools-dialog,
+.image-viewer {
+  overscroll-behavior: contain;
+}
+
+.image-viewer {
+  width: 100%;
+  max-width: none;
+  height: 100%;
+  max-height: none;
+  margin: 0;
+  padding: 3.5rem 1rem 1rem;
+  border: 0;
+  background: transparent;
+  overflow: auto;
+}
+
+.image-viewer::backdrop {
+  background: rgba(29, 23, 20, 0.78);
+  backdrop-filter: blur(4px);
+}
+
+.image-viewer[open] {
+  display: flex;
+  animation: tools-dialog-in 0.2s ease;
+}
+
+.image-viewer-close {
+  position: fixed;
+  top: 0.9rem;
+  right: 0.9rem;
+  width: 2.4rem;
+  height: 2.4rem;
+  background: var(--surface);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+}
+
+.image-viewer-frame {
+  margin: auto;
+  padding: 0.75rem;
+  border-radius: var(--radius-sm);
+  background: #fff;
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.35);
+}
+
+.image-viewer-frame img {
+  display: block;
+  max-width: 100%;
+  max-height: calc(100vh - 8rem);
+  margin: 0 auto;
+  cursor: zoom-in;
+}
+
+.image-viewer-frame {
+  max-width: 100%;
+}
+
+.image-viewer.is-zoomed .image-viewer-frame {
+  max-width: none;
+}
+
+.image-viewer.is-zoomed .image-viewer-frame img {
+  max-width: none;
+  max-height: none;
+  cursor: zoom-out;
+}
+
+.image-viewer-frame figcaption {
+  display: grid;
+  gap: 0.1rem;
+  margin-top: 0.5rem;
+  color: var(--muted);
+  font-size: 0.85rem;
+  text-align: center;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tools-dialog[open],
+  .image-viewer[open] {
+    animation: none;
   }
 }
 

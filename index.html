@@ -166,6 +166,50 @@
                 1.4 m with about 78 identity switches per run. Next up: a
                 tracking filter, measured against this baseline.
               </p>
+              <template class="project-diagrams">
+                <div class="diagram-list">
+                  <figure class="diagram-card">
+                    <figcaption>
+                      <span class="diagram-title">Planned architecture</span>
+                      <span class="diagram-note">Green parts are built, dashed parts are planned.</span>
+                    </figcaption>
+                    <a
+                      href="assets/diagrams/kite-projected-design.png"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <img
+                        src="assets/diagrams/kite-projected-design.png"
+                        alt="Kite architecture: the BeamNG.tech simulator feeds a Python bridge into perception, tracking, prediction, planning and control. Built so far: synthetic scenario generator, versioned log format, baseline tracker and scoring harness."
+                        width="1568"
+                        height="376"
+                        loading="lazy"
+                        decoding="async"
+                      />
+                    </a>
+                  </figure>
+                  <figure class="diagram-card">
+                    <figcaption>
+                      <span class="diagram-title">Evaluation loop</span>
+                      <span class="diagram-note">How the baseline tracker is scored against ground truth.</span>
+                    </figcaption>
+                    <a
+                      href="assets/diagrams/kite-evaluation-loop.png"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <img
+                        src="assets/diagrams/kite-evaluation-loop.png"
+                        alt="Evaluation loop: random seed, scenario generator, log file, baseline tracker, track records, scoring harness, metrics, baseline document."
+                        width="1568"
+                        height="84"
+                        loading="lazy"
+                        decoding="async"
+                      />
+                    </a>
+                  </figure>
+                </div>
+              </template>
               <div class="project-action-row">
                 <a
                   class="project-link"
@@ -233,6 +277,70 @@
                 late in a one-hour session to about 0.03 seconds anywhere, by
                 reading only the newest frames instead of the whole history.
               </p>
+              <template class="project-diagrams">
+                <div class="diagram-list">
+                  <figure class="diagram-card">
+                    <figcaption>
+                      <span class="diagram-title">Data flow</span>
+                      <span class="diagram-note">From the OpenF1 API to the 3D viewer.</span>
+                    </figcaption>
+                    <a
+                      href="assets/diagrams/f1-data-flow.png"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <img
+                        src="assets/diagrams/f1-data-flow.png"
+                        alt="Data flow: the OpenF1 API is polled by the Spring Boot ingestion module into Redis, PostgreSQL and S3, then streamed over STOMP WebSocket to the React and Three.js viewer."
+                        width="1568"
+                        height="690"
+                        loading="lazy"
+                        decoding="async"
+                      />
+                    </a>
+                  </figure>
+                  <figure class="diagram-card">
+                    <figcaption>
+                      <span class="diagram-title">Backend modules</span>
+                      <span class="diagram-note">How the five Maven modules depend on each other.</span>
+                    </figcaption>
+                    <a
+                      href="assets/diagrams/f1-backend-modules.png"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <img
+                        src="assets/diagrams/f1-backend-modules.png"
+                        alt="Five Maven modules: f1-api, f1-ingestion, f1-persistence and f1-ai all depend on f1-core, which has no database or Redis dependency."
+                        width="1306"
+                        height="1248"
+                        loading="lazy"
+                        decoding="async"
+                      />
+                    </a>
+                  </figure>
+                  <figure class="diagram-card">
+                    <figcaption>
+                      <span class="diagram-title">Deployment</span>
+                      <span class="diagram-note">AWS EC2 with Docker Compose, behind a Cloudflare Tunnel.</span>
+                    </figcaption>
+                    <a
+                      href="assets/diagrams/f1-deployment.png"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <img
+                        src="assets/diagrams/f1-deployment.png"
+                        alt="Deployment: the browser reaches Docker Compose on AWS EC2 through a Cloudflare Tunnel; the stack runs the frontend, Spring Boot API, PostgreSQL and Redis, with track models in S3."
+                        width="1568"
+                        height="388"
+                        loading="lazy"
+                        decoding="async"
+                      />
+                    </a>
+                  </figure>
+                </div>
+              </template>
               <div class="project-gallery">
                 <a
                   href="https://f1visualizer.dev/"
@@ -361,6 +469,50 @@
                 confirmations across a 50-claim test battery. LPL's judges
                 expressed interest in implementing the platform internally.
               </p>
+              <template class="project-diagrams">
+                <div class="diagram-list">
+                  <figure class="diagram-card">
+                    <figcaption>
+                      <span class="diagram-title">Platform overview</span>
+                      <span class="diagram-note">The parts I built are in blue.</span>
+                    </figcaption>
+                    <a
+                      href="assets/diagrams/lpl-platform-overview.png"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <img
+                        src="assets/diagrams/lpl-platform-overview.png"
+                        alt="Platform overview: React app, Express backend, Valkey, Aurora PostgreSQL and S3, plus Bedrock, Textract and the Python analysis service on SageMaker. The advisor notes routes and the Python service are highlighted as my work."
+                        width="1568"
+                        height="1208"
+                        loading="lazy"
+                        decoding="async"
+                      />
+                    </a>
+                  </figure>
+                  <figure class="diagram-card">
+                    <figcaption>
+                      <span class="diagram-title">Python analysis service</span>
+                      <span class="diagram-note">The service I built, from Textract output to the overview API.</span>
+                    </figcaption>
+                    <a
+                      href="assets/diagrams/lpl-python-service.png"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <img
+                        src="assets/diagrams/lpl-python-service.png"
+                        alt="Python analysis service: Textract parsing and redaction, normalization, document decisions, value checks, rules engine, the AI model and the FastAPI overview API."
+                        width="1568"
+                        height="844"
+                        loading="lazy"
+                        decoding="async"
+                      />
+                    </a>
+                  </figure>
+                </div>
+              </template>
               <div class="project-action-row">
                 <a
                   class="project-link"
@@ -458,6 +610,30 @@
                   sent to the model.
                 </li>
               </ul>
+              <template class="project-diagrams">
+                <div class="diagram-list">
+                  <figure class="diagram-card">
+                    <figcaption>
+                      <span class="diagram-title">Request flow</span>
+                      <span class="diagram-note">How requests move through the FastAPI app.</span>
+                    </figcaption>
+                    <a
+                      href="assets/diagrams/job-tracker-flow.png"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <img
+                        src="assets/diagrams/job-tracker-flow.png"
+                        alt="Request flow: the browser calls FastAPI sign-in and job routes; sign-in uses Google OAuth, and screenshots pass through image checks, OpenAI vision extraction and date handling into PostgreSQL on Supabase."
+                        width="1568"
+                        height="284"
+                        loading="lazy"
+                        decoding="async"
+                      />
+                    </a>
+                  </figure>
+                </div>
+              </template>
             </article>
           </div>
         </section>
@@ -746,12 +922,30 @@
           </svg>
         </button>
       </div>
-      <p class="tools-dialog-label">Tools involved</p>
-      <div class="tools-dialog-groups"></div>
+      <p class="tools-dialog-label"></p>
+      <div class="tools-dialog-body"></div>
     </dialog>
-    <div class="cursor-hint" aria-hidden="true">
-      Click to see tools involved
-    </div>
+    <dialog class="image-viewer" aria-label="Enlarged diagram">
+      <button
+        class="tools-dialog-close image-viewer-close"
+        type="button"
+        aria-label="Close enlarged diagram"
+      >
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path
+            d="M6 6l12 12M18 6 6 18"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2.2"
+            stroke-linecap="round"
+          />
+        </svg>
+      </button>
+      <figure class="image-viewer-frame">
+        <img alt="" />
+        <figcaption></figcaption>
+      </figure>
+    </dialog>
     <script>
       (function () {
         var dialog = document.querySelector(".tools-dialog");
@@ -759,15 +953,40 @@
 
         if (dialog && dialog.showModal) {
           var dialogTitle = dialog.querySelector("#tools-dialog-title");
-          var dialogGroups = dialog.querySelector(".tools-dialog-groups");
-          var lastCard = null;
+          var dialogLabel = dialog.querySelector(".tools-dialog-label");
+          var dialogBody = dialog.querySelector(".tools-dialog-body");
+          var lastButton = null;
 
-          function openTools(card) {
+          function openDialog(card, label, bodyClass, button) {
+            dialogTitle.textContent = card.querySelector("h3").textContent;
+            dialogLabel.textContent = label;
+            dialogBody.className = "tools-dialog-body " + bodyClass;
+            dialog.classList.toggle("is-wide", bodyClass === "diagram-list");
+            dialogBody.replaceChildren();
+            lastButton = button;
+          }
+
+          function openDiagrams(card, button) {
+            var template = card.querySelector("template.project-diagrams");
+            var list = template.content.querySelector(".diagram-list");
+
+            var count = list.querySelectorAll(".diagram-card").length;
+            openDialog(
+              card,
+              "System diagrams · " + count,
+              "diagram-list",
+              button,
+            );
+            dialogBody.appendChild(list.cloneNode(true));
+            dialog.showModal();
+            dialog.scrollTop = 0;
+          }
+
+          function openTools(card, button) {
             // data-tools format: "Group: tool, tool; Group: tool, tool"
             var groups = (card.dataset.tools || "").split(";");
 
-            dialogTitle.textContent = card.querySelector("h3").textContent;
-            dialogGroups.replaceChildren();
+            openDialog(card, "Tools involved", "tools-dialog-groups", button);
             groups.forEach(function (group) {
               var split = group.indexOf(":");
               var name = split === -1 ? "" : group.slice(0, split).trim();
@@ -794,72 +1013,51 @@
                 list.appendChild(li);
               });
               section.appendChild(list);
-              dialogGroups.appendChild(section);
+              dialogBody.appendChild(section);
             });
 
-            lastCard = card;
-            hideHint();
             dialog.showModal();
           }
 
-          // "Click to see tools" label that appears at the cursor after it
-          // rests on a card for a few seconds.
-          var hint = document.querySelector(".cursor-hint");
-          var canHover = window.matchMedia("(hover: hover)").matches;
-          var hintDelay = 800;
-          var hintTimer = null;
-
-          function hideHint() {
-            clearTimeout(hintTimer);
-            if (hint) hint.classList.remove("is-visible");
+          function makeButton(label, onClick) {
+            var button = document.createElement("button");
+            button.type = "button";
+            button.className = "project-button";
+            button.setAttribute("aria-haspopup", "dialog");
+            button.textContent = label;
+            button.addEventListener("click", function () {
+              onClick(button);
+            });
+            return button;
           }
 
-          function moveHint(event) {
-            hideHint();
-            if (event.target.closest("a, button, .award-video")) return;
-
-            var x = event.clientX + 16;
-            var y = event.clientY + 18;
-            if (x + hint.offsetWidth > window.innerWidth - 8) {
-              x = event.clientX - hint.offsetWidth - 12;
-            }
-            if (y + hint.offsetHeight > window.innerHeight - 8) {
-              y = event.clientY - hint.offsetHeight - 12;
-            }
-            hint.style.transform = "translate(" + x + "px, " + y + "px)";
-
-            hintTimer = setTimeout(function () {
-              if (!dialog.open) hint.classList.add("is-visible");
-            }, hintDelay);
-          }
-
-          if (hint && canHover) {
-            window.addEventListener("scroll", hideHint, { passive: true });
-          }
-
+          // Add "Tools involved" and "System diagrams" buttons to each card's
+          // link row (creating the row if the card has none).
           cards.forEach(function (card) {
-            card.classList.add("is-clickable");
-            card.setAttribute("tabindex", "0");
-            card.setAttribute("aria-haspopup", "dialog");
-
-            if (hint && canHover) {
-              card.addEventListener("mousemove", moveHint);
-              card.addEventListener("mouseleave", hideHint);
+            var row = card.querySelector(".project-action-row");
+            if (!row) {
+              row = document.createElement("div");
+              row.className = "project-action-row";
+              card.appendChild(row);
             }
+            var before = row.querySelector(".project-thanks");
 
-            card.addEventListener("click", function (event) {
-              if (event.target.closest("a, button, .award-video")) return;
-              if (String(window.getSelection())) return;
-              openTools(card);
-            });
-
-            card.addEventListener("keydown", function (event) {
-              if (event.target !== card) return;
-              if (event.key === "Enter" || event.key === " ") {
-                event.preventDefault();
-                openTools(card);
-              }
-            });
+            if (card.dataset.tools) {
+              row.insertBefore(
+                makeButton("Tools involved", function (button) {
+                  openTools(card, button);
+                }),
+                before,
+              );
+            }
+            if (card.querySelector("template.project-diagrams")) {
+              row.insertBefore(
+                makeButton("System diagrams", function (button) {
+                  openDiagrams(card, button);
+                }),
+                before,
+              );
+            }
           });
 
           dialog
@@ -874,7 +1072,59 @@
           });
 
           dialog.addEventListener("close", function () {
-            if (lastCard) lastCard.focus();
+            if (lastButton) lastButton.focus();
+          });
+
+          // Enlarged view of a diagram, opened on top of the diagrams popup.
+          var viewer = document.querySelector(".image-viewer");
+          var viewerImage = viewer.querySelector("img");
+          var viewerCaption = viewer.querySelector("figcaption");
+          var lastLink = null;
+
+          dialogBody.addEventListener("click", function (event) {
+            // The whole diagram card opens the enlarged view, not just the image.
+            var card = event.target.closest(".diagram-card");
+            if (!card) return;
+            var link = card.querySelector("a");
+            event.preventDefault();
+
+            var image = link.querySelector("img");
+            var caption = link.parentElement.querySelector("figcaption");
+            viewerImage.src = image.src;
+            viewerImage.alt = image.alt;
+            viewerCaption.replaceChildren();
+            if (caption) {
+              viewerCaption.append.apply(
+                viewerCaption,
+                caption.cloneNode(true).childNodes,
+              );
+            }
+            viewer.classList.remove("is-zoomed");
+            lastLink = link;
+            viewer.showModal();
+          });
+
+          // Click the image to switch between fit-to-screen and actual size.
+          viewerImage.addEventListener("click", function () {
+            var shrunk = viewerImage.naturalWidth > viewerImage.clientWidth + 1;
+            if (shrunk || viewer.classList.contains("is-zoomed")) {
+              viewer.classList.toggle("is-zoomed");
+            }
+          });
+
+          viewer
+            .querySelector(".image-viewer-close")
+            .addEventListener("click", function () {
+              viewer.close();
+            });
+
+          // Clicking the dark area around the image closes the viewer.
+          viewer.addEventListener("click", function (event) {
+            if (event.target === viewer) viewer.close();
+          });
+
+          viewer.addEventListener("close", function () {
+            if (lastLink) lastLink.focus();
           });
         }
       })();
