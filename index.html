@@ -90,9 +90,6 @@
               >
             </div>
             <div class="award-side">
-              <span class="project-status"
-                >Built in 24 hours · October 2–3, 2026</span
-              >
               <div class="award-logos">
                 <img
                   class="award-logo-lpl"
@@ -122,7 +119,7 @@
           <div class="project-grid">
             <article
               class="project-card"
-              data-tools="C++17, CMake, Ninja, GoogleTest, Python (repo tooling and tests), GitHub Actions (Linux g++ and Windows MSVC), gitleaks, Dependabot, Git, GitHub CLI, Claude Code, Planned: BeamNG.tech and BeamNGpy, Planned: Rerun (3D visualization)"
+              data-tools="Languages: C++17, Python (repo tooling and tests); Build and Test: CMake, Ninja, GoogleTest; CI and Security: GitHub Actions (Linux g++ and Windows MSVC), gitleaks, Dependabot; Workflow: Git, GitHub CLI, Claude Code; Planned: BeamNG.tech and BeamNGpy, Rerun (3D visualization)"
             >
               <div class="project-header">
                 <h3>Kite Multi-Sensor Driving Stack (in simulation)</h3>
@@ -188,7 +185,7 @@
 
             <article
               class="project-card"
-              data-tools="Java 21, Spring Boot 4, Maven (5 modules), Spring Web (REST), Spring WebSocket (STOMP), Spring Security with JWT, Spring Data JPA, Flyway, Caffeine cache, PostgreSQL 16, Redis 7, OpenF1 API, AWS S3, AWS EC2, Cloudflare Tunnel, OpenAI (gpt-4o-mini), React 18, TypeScript 5, Vite 6, Three.js with react-three-fiber and drei, Zustand, Tailwind CSS, Python (track-mesh generator), JUnit 5, Testcontainers, Vitest, Testing Library, Docker, Docker Compose, GitHub Actions CI, Dependabot, ESLint"
+              data-tools="Backend: Java 21, Spring Boot 4, Maven (5 modules), Spring Web (REST), Spring WebSocket (STOMP), Spring Security with JWT; Data: Spring Data JPA, Flyway, Caffeine cache, PostgreSQL 16, Redis 7; Frontend: React 18, TypeScript 5, Vite 6, Three.js with react-three-fiber and drei, Zustand, Tailwind CSS; Cloud and APIs: AWS S3, AWS EC2, Cloudflare Tunnel, OpenF1 API, OpenAI (gpt-4o-mini); Testing: JUnit 5, Testcontainers, Vitest, Testing Library; DevOps and Tooling: Docker, Docker Compose, GitHub Actions CI, Dependabot, ESLint, Python (track-mesh generator)"
             >
               <div class="project-header">
                 <h3>Formula One 3D Telemetry Visualizer</h3>
@@ -287,13 +284,12 @@
             <article
               id="lpl-project"
               class="award-card"
-              data-tools="Python 3.13 (mine), FastAPI (mine), Pydantic (mine), pytest (mine), httpx (mine), OpenDecision zero-shot classifier on PyTorch (mine), AWS Textract output parsing (mine), AWS Bedrock knowledge base for notes (mine), AWS SageMaker GPU endpoint (runs my service), TypeScript / Express / Drizzle ORM / zod / React (my notes feature), Team stack: AWS Textract / S3 / Bedrock / SageMaker / Aurora PostgreSQL / BullMQ / Socket.IO / React 19 / Vite"
+              data-tools="My Service: Python 3.13, FastAPI, Pydantic, pytest, httpx; My ML and AWS Work: OpenDecision zero-shot classifier on PyTorch, AWS Textract output parsing, AWS Bedrock knowledge base for notes, AWS SageMaker GPU endpoint (runs my service); My Notes Feature: TypeScript, Express, Drizzle ORM, zod, React; Team Stack: AWS Textract, AWS S3, AWS Bedrock, AWS SageMaker, Aurora PostgreSQL, BullMQ, Socket.IO, React 19, Vite"
             >
               <div class="award-header">
                 <span class="award-badge">🏆 Best Use of AWS (team award)</span>
-                <span class="award-meta"
-                  >LPL Financial University 24H Hackathon · October 2–3,
-                  2026</span
+                <span class="project-status"
+                  >Built in 24 hours · October 2–3, 2026</span
                 >
               </div>
               <div class="award-intro">
@@ -389,7 +385,7 @@
 
             <article
               class="project-card"
-              data-tools="Java, Spring Boot, Maven, React, TypeScript, Vite, JUnit, Vitest, Playwright, GitHub Actions, Self-hosted CI runner (WSL), gitleaks, SpotBugs, PowerShell, Git, GitHub CLI, Claude Code"
+              data-tools="Backend: Java, Spring Boot, Maven; Frontend: React, TypeScript, Vite; Testing: JUnit, Vitest, Playwright; CI and Security: GitHub Actions, Self-hosted CI runner (WSL), gitleaks, SpotBugs; Workflow: PowerShell, Git, GitHub CLI, Claude Code"
             >
               <div class="project-header">
                 <h3>Stealth Project</h3>
@@ -424,7 +420,7 @@
 
             <article
               class="project-card"
-              data-tools="Python 3.11, FastAPI, Uvicorn, Pydantic, SQLAlchemy 2, PostgreSQL on Supabase, Jinja2 templates, Google OAuth 2.0, JWT (python-jose), Pillow, OpenAI vision (gpt-4.1), pytest"
+              data-tools="Backend: Python 3.11, FastAPI, Uvicorn, Pydantic, Jinja2 templates; Data: SQLAlchemy 2, PostgreSQL on Supabase; Auth: Google OAuth 2.0, JWT (python-jose); Imaging and AI: Pillow, OpenAI vision (gpt-4.1); Testing: pytest"
             >
               <div class="project-header">
                 <h3>Job Application Tracker</h3>
@@ -751,7 +747,7 @@
         </button>
       </div>
       <p class="tools-dialog-label">Tools involved</p>
-      <ul class="tools-dialog-list"></ul>
+      <div class="tools-dialog-groups"></div>
     </dialog>
     <div class="cursor-hint" aria-hidden="true">
       Click to see tools involved
@@ -763,18 +759,42 @@
 
         if (dialog && dialog.showModal) {
           var dialogTitle = dialog.querySelector("#tools-dialog-title");
-          var dialogList = dialog.querySelector(".tools-dialog-list");
+          var dialogGroups = dialog.querySelector(".tools-dialog-groups");
           var lastCard = null;
 
           function openTools(card) {
-            var tools = (card.dataset.tools || "").split(",");
+            // data-tools format: "Group: tool, tool; Group: tool, tool"
+            var groups = (card.dataset.tools || "").split(";");
 
             dialogTitle.textContent = card.querySelector("h3").textContent;
-            dialogList.replaceChildren();
-            tools.forEach(function (tool) {
-              var li = document.createElement("li");
-              li.textContent = tool.trim();
-              dialogList.appendChild(li);
+            dialogGroups.replaceChildren();
+            groups.forEach(function (group) {
+              var split = group.indexOf(":");
+              var name = split === -1 ? "" : group.slice(0, split).trim();
+              var items = (split === -1 ? group : group.slice(split + 1))
+                .split(",")
+                .map(function (tool) {
+                  return tool.trim();
+                })
+                .filter(Boolean);
+              if (!items.length) return;
+
+              var section = document.createElement("div");
+              section.className = "skill-group";
+              if (name) {
+                var heading = document.createElement("h4");
+                heading.textContent = name;
+                section.appendChild(heading);
+              }
+              var list = document.createElement("ul");
+              list.className = "chips";
+              items.forEach(function (tool) {
+                var li = document.createElement("li");
+                li.textContent = tool;
+                list.appendChild(li);
+              });
+              section.appendChild(list);
+              dialogGroups.appendChild(section);
             });
 
             lastCard = card;

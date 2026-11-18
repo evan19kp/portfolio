@@ -885,7 +885,7 @@ p:last-child {
 }
 
 .tools-dialog {
-  width: min(26rem, calc(100% - 2rem));
+  width: min(44rem, calc(100% - 2rem));
   max-height: calc(100% - 2rem);
   padding: 1.3rem 1.4rem 1.5rem;
   border: 1px solid var(--border);
@@ -954,20 +954,28 @@ p:last-child {
   text-transform: uppercase;
 }
 
-.tools-dialog-list {
-  margin: 0;
-  padding: 0;
-  list-style: none;
+.tools-dialog-groups {
+  display: grid;
+  gap: 0.75rem;
 }
 
-.tools-dialog-list li {
-  padding: 0.55rem 0;
-  border-bottom: 1px solid var(--border);
-  font-weight: 500;
+@media (min-width: 700px) {
+  .tools-dialog-groups {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
-.tools-dialog-list li:last-child {
-  border-bottom: 0;
+.tools-dialog-groups .skill-group {
+  padding: 0.9rem 1rem 1rem;
+}
+
+.tools-dialog-groups h4 {
+  margin: 0 0 0.6rem;
+  color: var(--muted);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
 }
 
 @media (prefers-reduced-motion: reduce) {
