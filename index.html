@@ -43,28 +43,34 @@
               Mission Viejo, CA · US Citizen · Graduating May 2028
             </p>
           </div>
-          <img
-            class="portrait"
-            src="assets/evan.png"
-            alt="Evan Packard"
-            width="280"
-            height="350"
-          />
+          <div class="portrait-frame">
+            <img
+              class="portrait"
+              src="assets/PFPME.png"
+              alt="Evan Packard"
+              width="280"
+              height="350"
+            />
+          </div>
         </section>
 
         <section id="about" class="section">
           <div class="panel">
             <h2>About</h2>
             <p>
-              I focus on full-stack development, from designing REST APIs and
-              SQL schemas in Spring Boot to building React and Next.js frontends
-              that sit on top of them. I work across Java, Python, and
-              TypeScript, and I like owning a feature end to end, from the
-              database to deployment.
+              I'm a computer science student at CSUF who builds full-stack
+              products end to end: Spring Boot REST APIs and PostgreSQL schemas,
+              React and TypeScript frontends, and the deployment behind them. I
+              work in Java, Python and TypeScript, and I create and improve
+              agentic workflows for coding agents, testing and security-checking
+              everything they ship. Lately I've been building a driving stack in
+              simulation, inspired by how well Waymo handles real traffic and
+              rain.
             </p>
             <p>
-              Outside of code, I am a car enthusiast, I snowboard at Tahoe/Big
-              Bear, and I produce music in FL Studio.
+              Outside of code, I'm a car enthusiast who taught himself mechanic
+              work, I produce music in FL Studio, and I snowboard at Tahoe, Big
+              Bear and Mammoth.
             </p>
             <a class="btn btn-solid" href="#contact">Get in touch</a>
           </div>
@@ -72,83 +78,43 @@
 
         <section id="awards" class="section">
           <h2>Awards</h2>
-          <article
-            class="award-card"
-            data-tools="TypeScript, Node.js, Express, React, Vite, TanStack Query, Socket.IO, Zod, Python, FastAPI, Drizzle ORM, BullMQ, AWS Textract, Amazon SageMaker, ModernBERT (zero-shot), Amazon Aurora PostgreSQL, Amazon S3, Amazon ElastiCache (Valkey), Docker, GitHub Actions"
+          <a
+            class="award-summary"
+            href="#lpl-project"
+            aria-label="Best Use of AWS, LPL Financial University 24H Hackathon. See the project."
           >
-            <div class="award-header">
-              <span class="award-badge">🏆 Best Use of AWS</span>
+            <div class="award-summary-text">
+              <h3>Best Use of AWS</h3>
               <span class="award-meta"
-                >LPL Financial University 24H Hackathon · October 2026</span
+                >LPL Financial University 24H Hackathon · Team award</span
               >
             </div>
-            <div class="award-intro">
-              <h3>Backbone</h3>
-              <p>
-                A document intelligence platform for LPL's financial advisors,
-                built in 24 hours by a team of five. Researching LPL's advisor
-                platform, we found that client documents were disorganized and
-                hard to find, so we built a pipeline that sorts them
-                automatically and makes them searchable.
-              </p>
-            </div>
-            <div class="award-video">
-              <iframe
-                src="https://www.youtube-nocookie.com/embed/2I7ILFuSh48?rel=0"
-                title="Backbone hackathon demo"
-                loading="lazy"
-                allow="
-                  accelerometer;
-                  clipboard-write;
-                  encrypted-media;
-                  gyroscope;
-                  picture-in-picture;
-                  web-share;
-                "
-                referrerpolicy="strict-origin-when-cross-origin"
-                allowfullscreen
-              ></iframe>
-            </div>
-            <div class="award-role">
-              <p class="award-label">What I built</p>
-              <ul class="award-points">
-                <li>
-                  <strong>AI document pipeline.</strong> Cleaned and normalized
-                  AWS Textract output in Python so a zero-shot ModernBERT model
-                  could classify each document by owner, type, and topic, with a
-                  confidence score for every label. Zero-shot meant no training
-                  data, and new categories can be added without retraining.
-                </li>
-                <li>
-                  <strong>Live documents and notes pages.</strong> Connected the
-                  React pages to Aurora PostgreSQL through an Express and
-                  Drizzle API, using React Query and Socket.IO so they update
-                  live as documents change.
-                </li>
-                <li>
-                  <strong>Chatbot knowledge base.</strong> Linked those pages to
-                  the knowledge base behind the platform's AI chatbot, which
-                  answers advisors' questions using only each client's own files
-                  and notes.
-                </li>
-              </ul>
-            </div>
-            <p class="award-outcome">
-              <strong>Outcome:</strong> LPL's judges expressed interest in
-              implementing Backbone internally.
-            </p>
-            <div class="project-action-row">
-              <a
-                class="project-link"
-                href="https://github.com/TheBigJ3/LPL-Hacks"
-                target="_blank"
-                rel="noopener noreferrer"
+            <div class="award-side">
+              <span class="project-status"
+                >Built in 24 hours · October 2–3, 2026</span
               >
-                View repo
-                <span aria-hidden="true">↗</span>
-              </a>
+              <div class="award-logos">
+                <img
+                  class="award-logo-lpl"
+                  src="assets/lpl-logo.png"
+                  alt="LPL Financial"
+                  width="700"
+                  height="90"
+                />
+                <span class="award-logos-divider" aria-hidden="true"></span>
+                <img
+                  class="award-logo-aws"
+                  src="assets/aws-logo.png"
+                  alt="Amazon Web Services"
+                  width="226"
+                  height="135"
+                />
+              </div>
             </div>
-          </article>
+            <span class="award-summary-cta"
+              >See the project <span aria-hidden="true">↓</span></span
+            >
+          </a>
         </section>
 
         <section id="projects" class="section">
@@ -156,17 +122,119 @@
           <div class="project-grid">
             <article
               class="project-card"
-              data-tools="Java, Spring Boot, React Three Fiber, WebSockets, Docker, AWS EC2, Cloudflare"
+              data-tools="C++17, CMake, Ninja, GoogleTest, Python (repo tooling and tests), GitHub Actions (Linux g++ and Windows MSVC), gitleaks, Dependabot, Git, GitHub CLI, Claude Code, Planned: BeamNG.tech and BeamNGpy, Planned: Rerun (3D visualization)"
             >
-              <h3>F1 Live 3D Telemetry Visualizer</h3>
+              <div class="project-header">
+                <h3>Kite Multi-Sensor Driving Stack (in simulation)</h3>
+                <span class="project-status"
+                  >In early development · started November 2026</span
+                >
+              </div>
               <p>
-                A 3D replay of real Formula 1 sessions in the browser, built
-                with React Three Fiber and Spring Boot from OpenF1 timing and
-                GPS data. Cars stream over WebSockets onto circuits rebuilt from
-                GPS, with braking heatmaps, track elevation, and pit strategy.
-                Every visitor controls their own replay without logging in. It
-                runs in Docker on AWS Graviton behind a Cloudflare Tunnel, with
-                CI security gates and a hardened, rate-limited public API.
+                A modular, Waymo-inspired autonomous-driving software stack in
+                C++, built in stages: perception, then tracking and own-state
+                estimation, then prediction, planning and control. It is a
+                student project that runs in simulation only. The plan is to
+                connect it to the BeamNG.tech simulator and score every stage
+                against the simulator's ground truth, which is used to score
+                results, never to drive. Everything built so far runs on
+                synthetic data.
+              </p>
+              <ul class="award-points">
+                <li>
+                  <strong>Core library.</strong> A C++17 library with shared
+                  types and a versioned log format that every later stage will
+                  read and write.
+                </li>
+                <li>
+                  <strong>Reproducible scenarios.</strong> A seeded synthetic
+                  scenario generator (vehicles with noisy detections) that
+                  produces identical output on every platform.
+                </li>
+                <li>
+                  <strong>Baseline and scoring harness.</strong> A deliberately
+                  simple nearest-neighbour tracker as the number to beat, and a
+                  harness that matches tracks to ground truth and reports missed
+                  and false detections, position error and identity switches.
+                </li>
+                <li>
+                  <strong>CI on two platforms.</strong> Builds and tests the C++
+                  on Linux and Windows, with a check that keeps simulator files
+                  out of the repo.
+                </li>
+              </ul>
+              <p class="award-outcome">
+                <strong>Baseline:</strong> on synthetic data across 20 random
+                scenarios, the baseline tracker's mean position error is about
+                1.4 m with about 78 identity switches per run. Next up: a
+                tracking filter, measured against this baseline.
+              </p>
+              <div class="project-action-row">
+                <a
+                  class="project-link"
+                  href="https://github.com/evan19kp/kite-multi-sensor-driving-stack"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  View repo
+                  <span aria-hidden="true">↗</span>
+                </a>
+              </div>
+              <p class="project-disclaimer">
+                Uses BeamNG.tech by BeamNG GmbH under an academic license. Not
+                affiliated with or endorsed by BeamNG GmbH.
+              </p>
+            </article>
+
+            <article
+              class="project-card"
+              data-tools="Java 21, Spring Boot 4, Maven (5 modules), Spring Web (REST), Spring WebSocket (STOMP), Spring Security with JWT, Spring Data JPA, Flyway, Caffeine cache, PostgreSQL 16, Redis 7, OpenF1 API, AWS S3, AWS EC2, Cloudflare Tunnel, OpenAI (gpt-4o-mini), React 18, TypeScript 5, Vite 6, Three.js with react-three-fiber and drei, Zustand, Tailwind CSS, Python (track-mesh generator), JUnit 5, Testcontainers, Vitest, Testing Library, Docker, Docker Compose, GitHub Actions CI, Dependabot, ESLint"
+            >
+              <div class="project-header">
+                <h3>Formula One 3D Telemetry Visualizer</h3>
+                <span class="project-status"
+                  >Live · built June to September 2026</span
+                >
+              </div>
+              <p>
+                A live 3D replay viewer for Formula One races, with a Spring
+                Boot backend that streams car positions to a React and Three.js
+                viewer. It pulls real race data from the public OpenF1 API,
+                stores it in Redis and PostgreSQL, and streams it over
+                WebSocket. You can play, pause and seek through a session,
+                switch between orbit, follow and TV cameras, and watch a gap
+                tower, a tire widget and a braking heatmap.
+              </p>
+              <ul class="award-points">
+                <li>
+                  <strong>System design.</strong> Designed a five-module Maven
+                  backend around a simple, modular principle: the core module
+                  defines the data interfaces with no database or Redis
+                  dependency, and the persistence module implements them.
+                </li>
+                <li>
+                  <strong>Data pipeline.</strong> Built OpenF1 ingestion with
+                  separate poll intervals and backoff for rate limits, a Redis
+                  to STOMP/WebSocket stream, and a replay service with play,
+                  pause and seek.
+                </li>
+                <li>
+                  <strong>3D viewer and track meshes.</strong> Built the React
+                  and Three.js viewer, plus a Python tool that generates track
+                  meshes from OpenF1 location data and publishes them to AWS S3.
+                </li>
+                <li>
+                  <strong>Public-demo hardening.</strong> Ran a pre-deployment
+                  security review, capped playback slots per IP, and replaced a
+                  memory-heavy heatmap endpoint with a grid built at ingestion.
+                  Deployed on AWS EC2 with Docker Compose behind a Cloudflare
+                  Tunnel, with CI on GitHub Actions.
+                </li>
+              </ul>
+              <p class="award-outcome">
+                <strong>Result:</strong> replay seek went from about 1 second
+                late in a one-hour session to about 0.03 seconds anywhere, by
+                reading only the newest frames instead of the whole history.
               </p>
               <div class="project-gallery">
                 <a
@@ -217,31 +285,183 @@
             </article>
 
             <article
-              class="project-card"
-              data-tools="Java, Spring Boot, React, JPA, Spring Cache"
+              id="lpl-project"
+              class="award-card"
+              data-tools="Python 3.13 (mine), FastAPI (mine), Pydantic (mine), pytest (mine), httpx (mine), OpenDecision zero-shot classifier on PyTorch (mine), AWS Textract output parsing (mine), AWS Bedrock knowledge base for notes (mine), AWS SageMaker GPU endpoint (runs my service), TypeScript / Express / Drizzle ORM / zod / React (my notes feature), Team stack: AWS Textract / S3 / Bedrock / SageMaker / Aurora PostgreSQL / BullMQ / Socket.IO / React 19 / Vite"
             >
-              <h3>AI Assisted Pokemon Team Builder</h3>
-              <p>
-                Full-stack app for building and saving Pokémon teams, backed by
-                Spring Boot and React. Pulls live data from a public Pokémon API
-                and caches repeat lookups with Spring Cache, cutting redundant
-                external calls and keeping the UI responsive. Teams persist per
-                user via JPA, so builds are saved across sessions.
+              <div class="award-header">
+                <span class="award-badge">🏆 Best Use of AWS (team award)</span>
+                <span class="award-meta"
+                  >LPL Financial University 24H Hackathon · October 2–3,
+                  2026</span
+                >
+              </div>
+              <div class="award-intro">
+                <h3>Financial Advisor Document Platform</h3>
+                <p>
+                  A document platform for wealth-management advisors, built in
+                  24 hours by a team of five. Advisors upload client documents,
+                  AWS Textract extracts the fields, documents are tagged by
+                  type, topic and family member, advisors keep notes, and an AI
+                  assistant answers questions from the client's documents and
+                  notes with citations. We spoke with a real financial advisor
+                  during planning to understand his problems.
+                </p>
+              </div>
+              <div class="award-video">
+                <iframe
+                  src="https://www.youtube-nocookie.com/embed/2I7ILFuSh48?rel=0"
+                  title="Financial Advisor Document Platform hackathon demo"
+                  loading="lazy"
+                  allow="
+                    accelerometer;
+                    clipboard-write;
+                    encrypted-media;
+                    gyroscope;
+                    picture-in-picture;
+                    web-share;
+                  "
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  allowfullscreen
+                ></iframe>
+              </div>
+              <div class="award-role">
+                <p class="award-label">What I built</p>
+                <ul class="award-points">
+                  <li>
+                    <strong>Python analysis service.</strong> A FastAPI and
+                    Pydantic service, running on a GPU-hosted AWS SageMaker
+                    endpoint, that turns Textract output for W-2, 1099-R, 1040,
+                    1098, 1095 and bank-statement forms into standard fields.
+                    IDs, account numbers and addresses are redacted as soon as
+                    the text is read, and disagreeing sources are kept as
+                    conflicts with their origin instead of silently picking one.
+                  </li>
+                  <li>
+                    <strong>Rules decide, the model supports.</strong> Strict
+                    rules assign each document's type, tags and family member,
+                    and a deterministic rules engine produces findings that each
+                    show the rule behind them. A zero-shot model only suggests,
+                    confirms or vetoes, and checks each figure against its
+                    source so the advisor sees verified, mismatch, unconfirmed
+                    or conflicted. If the model is down, the page still renders.
+                  </li>
+                  <li>
+                    <strong>Advisor notes, end to end.</strong> A database
+                    table, API routes scoped to the advisor, a React Notes page,
+                    and indexing into the AWS Bedrock knowledge base so the
+                    assistant cites notes as the advisor's own records.
+                  </li>
+                  <li>
+                    <strong>Pitching it.</strong> Explained the platform to the
+                    LPL judges in plain business terms, after learning an
+                    unfamiliar zero-shot AI package and AWS text-extraction
+                    formats during the 24 hours.
+                  </li>
+                </ul>
+              </div>
+              <p class="award-outcome">
+                <strong>Result:</strong> my value checks made 0 false
+                confirmations across a 50-claim test battery. LPL's judges
+                expressed interest in implementing the platform internally.
               </p>
+              <div class="project-action-row">
+                <a
+                  class="project-link"
+                  href="https://youtu.be/2I7ILFuSh48?t=124"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Watch my part (2:04)
+                  <span aria-hidden="true">↗</span>
+                </a>
+                <a
+                  class="project-link"
+                  href="https://github.com/TheBigJ3/LPL-Hacks"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  View repo
+                  <span aria-hidden="true">↗</span>
+                </a>
+              </div>
             </article>
 
             <article
               class="project-card"
-              data-tools="Python, TypeScript, OAuth2, GPT-4o Vision"
+              data-tools="Java, Spring Boot, Maven, React, TypeScript, Vite, JUnit, Vitest, Playwright, GitHub Actions, Self-hosted CI runner (WSL), gitleaks, SpotBugs, PowerShell, Git, GitHub CLI, Claude Code"
             >
-              <h3>Job Application Tracker</h3>
+              <div class="project-header">
+                <h3>Stealth Project</h3>
+                <span class="project-status"
+                  >In development · private repository</span
+                >
+              </div>
               <p>
-                A tracker for managing job applications end-to-end, with a
-                Python backend and TypeScript frontend. Users authenticate via
-                OAuth2, and a GPT-4o Vision pipeline parses screenshots of job
-                postings — extracting fields like title, company, and
-                requirements — so users don't have to enter them manually.
+                A full-stack product I am building and keeping private for now.
+                Details are withheld on purpose.
               </p>
+              <ul class="award-points">
+                <li>
+                  <strong>Product and architecture.</strong> I design the
+                  product and the architecture, write every sprint spec, and set
+                  the guardrails and quality bar.
+                </li>
+                <li>
+                  <strong>Agentic workflow.</strong> I am testing my own
+                  advanced multistep agentic workflow by using it to build the
+                  product with coding agents (Claude Code). I review the
+                  results, test the product and make the technical calls.
+                </li>
+                <li>
+                  <strong>Engineering.</strong> Java and Spring Boot backend,
+                  React and TypeScript frontend, unit, integration and
+                  end-to-end tests, and CI that tests and security-scans every
+                  pull request.
+                </li>
+              </ul>
+            </article>
+
+            <article
+              class="project-card"
+              data-tools="Python 3.11, FastAPI, Uvicorn, Pydantic, SQLAlchemy 2, PostgreSQL on Supabase, Jinja2 templates, Google OAuth 2.0, JWT (python-jose), Pillow, OpenAI vision (gpt-4.1), pytest"
+            >
+              <div class="project-header">
+                <h3>Job Application Tracker</h3>
+                <span class="project-status"
+                  >Personal project · built May 9–11, 2026</span
+                >
+              </div>
+              <p>
+                A web app that turns a screenshot of a job listing into a saved
+                job, then tracks it as Saved, Applied or Rejected. You sign in
+                with Google, upload a screenshot, and a vision AI model reads
+                the title, company, date posted and location. Each user sees
+                only their own jobs.
+              </p>
+              <ul class="award-points">
+                <li>
+                  <strong>Requirements and data model.</strong> Wrote the
+                  requirements and database design, then specified the build.
+                </li>
+                <li>
+                  <strong>Sign-in.</strong> Google-only sign-in with an OAuth
+                  2.0 authorization-code flow and a JWT session cookie, so users
+                  never create a password.
+                </li>
+                <li>
+                  <strong>Screenshot pipeline.</strong> Upload checks, rotation
+                  fix and resizing, then vision extraction into a fixed
+                  four-field format. Relative dates like "5 days ago" become
+                  calendar dates.
+                </li>
+                <li>
+                  <strong>Prompt-injection defences.</strong> Text hidden in a
+                  screenshot is treated as data: the output is checked against a
+                  fixed format that drops extra fields, and the job URL is never
+                  sent to the model.
+                </li>
+              </ul>
             </article>
           </div>
         </section>
@@ -249,35 +469,112 @@
         <section id="skills" class="section">
           <h2>Skills</h2>
           <div class="skill-groups">
-            <div>
+            <div class="skill-group">
               <h3>Languages</h3>
               <ul class="chips">
                 <li>Java</li>
                 <li>Python</li>
                 <li>TypeScript</li>
+                <li>JavaScript</li>
                 <li>C++</li>
+                <li>C#</li>
+                <li>SQL</li>
+                <li>HTML/CSS</li>
+                <li>PowerShell</li>
+                <li>Bash</li>
               </ul>
             </div>
-            <div>
+            <div class="skill-group">
               <h3>Backend</h3>
               <ul class="chips">
                 <li>Spring Boot</li>
+                <li>FastAPI</li>
+                <li>Node.js</li>
+                <li>Express</li>
                 <li>REST APIs</li>
-                <li>SQL</li>
+                <li>WebSockets (STOMP)</li>
+                <li>OAuth 2.0</li>
+                <li>JWT</li>
+                <li>Maven</li>
               </ul>
             </div>
-            <div>
+            <div class="skill-group">
               <h3>Frontend</h3>
               <ul class="chips">
                 <li>React</li>
                 <li>Next.js</li>
+                <li>Vite</li>
+                <li>Three.js</li>
+                <li>React Three Fiber</li>
+                <li>Tailwind CSS</li>
               </ul>
             </div>
-            <div>
+            <div class="skill-group">
+              <h3>Databases</h3>
+              <ul class="chips">
+                <li>PostgreSQL</li>
+                <li>Redis</li>
+                <li>Spring Data JPA</li>
+                <li>Flyway</li>
+              </ul>
+            </div>
+            <div class="skill-group">
+              <h3>Cloud and DevOps</h3>
+              <ul class="chips">
+                <li>AWS EC2</li>
+                <li>AWS S3</li>
+                <li>AWS Textract</li>
+                <li>AWS Bedrock</li>
+                <li>AWS SageMaker</li>
+                <li>CMake</li>
+                <li>Docker</li>
+                <li>Docker Compose</li>
+                <li>GitHub Actions</li>
+                <li>Cloudflare Tunnel</li>
+                <li>Git</li>
+                <li>GitHub CLI</li>
+                <li>WSL (Ubuntu)</li>
+                <li>Dependabot</li>
+              </ul>
+            </div>
+            <div class="skill-group">
+              <h3>Testing and Security</h3>
+              <ul class="chips">
+                <li>JUnit</li>
+                <li>pytest</li>
+                <li>Vitest</li>
+                <li>Playwright</li>
+                <li>Testcontainers</li>
+                <li>GoogleTest</li>
+                <li>Security review</li>
+                <li>Prompt-injection defences</li>
+                <li>gitleaks</li>
+                <li>SpotBugs</li>
+              </ul>
+            </div>
+            <div class="skill-group">
+              <h3>AI and Agentic Tools</h3>
+              <ul class="chips">
+                <li>Claude Code</li>
+                <li>Cursor</li>
+                <li>Kiro</li>
+                <li>Multi-agent workflows</li>
+                <li>Agent guardrails</li>
+                <li>Specs for coding agents</li>
+                <li>OpenAI API</li>
+                <li>Zero-shot classification</li>
+              </ul>
+            </div>
+            <div class="skill-group">
               <h3>Practices</h3>
               <ul class="chips">
                 <li>Agile</li>
                 <li>Scrum</li>
+                <li>Code review</li>
+                <li>Automated testing</li>
+                <li>Performance optimization</li>
+                <li>Technical communication</li>
+                <li>Mentoring (ACM CSUF)</li>
               </ul>
             </div>
           </div>
